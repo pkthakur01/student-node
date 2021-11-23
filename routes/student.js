@@ -3,8 +3,8 @@ const router = express.Router();
 const utils = require('../utils/validators');
 const log4js = require('log4js');
 const logger = log4js.getLogger('studentslog');
-const Distributor = require('../db/distributordb');
-const StudentSchema = require('../models/distributer').DistributerSchema;
+const StudentDb = require('../db/studentdb');
+const StudentSchema = require('../models/student').StudentSchema;
 var XLSX = require('xlsx')
 const upload = require("../services/file-upload").upload;
 const fs = require('fs')
@@ -12,7 +12,7 @@ const fs = require('fs')
 
 
 //exel upload and read
-router.post("/registerdistributor", upload.single("file"), async (req, res) => {
+router.post("/upload", upload.single("file"), async (req, res) => {
 
     const fileLocation = req.file;
     if (!fileLocation) {
