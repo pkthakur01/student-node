@@ -1,0 +1,21 @@
+{
+  "OTP_SENT_SUCCESSFULLY": "OTP Sent Successfully",
+  "EMAIL_SENT": "Email sent",
+  "OTP_VERIFIED_SUCCESSFULLY": "OTP Verified Successfully",
+  "SUCCESS_CODE_200": 200,
+  "USER_REGISTRATION_SUCCESSFUL": "User Registration Successful",
+  "USER_LOGIN_SUCCESSFUL": "User Login Successful",
+  "SUCCESSFULLY_FETCH_DATA": "Successfully fetched data",
+  "TOKEN_GENERATED": "Token generated",
+  "USER_DETAILS_UPDATED": "User Details Updated Successfully",
+  "LOAN_APPLIED": "Loan Applied Successfully",
+  "EMAIL_VERIFIED": "Email Verified",
+  "STUDENT_REGISTERED_SUCCESSFULLY": "Student Registered Successfully",
+  "VERIFIED": "Verified Successfully",
+  "FEE_DETAILS_ADDED_SUCCESSFULLY": "Fee Details Updated successfully",
+  "DOCUMENTS_SUBMITTED": "Documents Submitted Successfully",
+  "BUSINESS_DETAILS": "Saved the Business Details Successfully",
+  "ADDRESS_DETAILS": "Address Details Updated Successfully",
+  "PASSWORD_RESET": "Password reset successfully",
+  "SUCCESS_PROFILE_UPDATE": "Successfully Update Profile details"
+}
