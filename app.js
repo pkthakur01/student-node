@@ -22,8 +22,8 @@ app.options('*', cors());
 app.use(cors());
 
 
-// const user = require('./routes/students.js');
-// app.use("/students", user);
+const student = require('./routes/student.js');
+app.use("/", student);
 
 
 app.get("/", function (req, res) {
