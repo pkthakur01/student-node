@@ -26,11 +26,7 @@ const student = require('./routes/student.js');
 app.use("/", student);
 
 
-app.get("/", function (req, res) {
-    console.log("app starting on port: " + serverConfig.port);
-    logger.info("app listening on port: " + serverConfig.port);
-    return res.status(200).send({ status: true, message: "app starting on port: " + serverConfig.port });
-});
+
 
 app.listen(serverConfig.port, function () {
     logger.info("app listening on port: " + serverConfig.port);
