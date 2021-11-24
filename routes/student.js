@@ -42,25 +42,6 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         let mark3 = json[i].mark3;
 
 
-        // if (!student_id || (typeof student_id != 'string')) {
-        //     error_data.push("Error in line Number " + (i + 2) + " Error : Profile pic is either not a string type or empty");
-        //     continue;
-        // } else if (!name || (typeof name != 'string')) {
-        //     error_data.push("Error in line Number " + (i + 2) + " Error : Store name is either not a string type or empty");
-        //     continue;
-        // } else if (!age || (typeof age != 'string')) {
-        //     error_data.push("Error in line Number " + (i + 2) + " Error : Name is either not a string type or empty");
-        //     continue;
-        // } else if (!mark1 || (typeof age != 'string')) {
-        //     error_data.push("Error in line Number " + (i + 2) + " Error : Contact is either not conation +91 folowwed by 10 digit or empty");
-        //     continue;
-        // } else if (!mark2 || (typeof mark2 != 'string')) {
-        //     error_data.push("Error in line Number " + (i + 2) + " Error : Email is either not a string type or empty");
-        //     continue;
-        // } else if (!mark3 || (typeof mark3 != 'string')) {
-        //     error_data.push("Error in line Number " + (i + 2) + " Error : Gstin is either not a string type or empty");
-        //     continue;
-        // }
         let newStudent = StudentSchema;
         newStudent.student_id = student_id;
         newStudent.name = name;
