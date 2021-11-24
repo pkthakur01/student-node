@@ -37,7 +37,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         let student_id = json[i].id;
         let name = json[i].name;
         let age = json[i].age;
-        let mark1 = json[i].makr1;
+        let mark1 = json[i].mark1;
         let mark2 = json[i].mark2;
         let mark3 = json[i].mark3;
 
@@ -100,4 +100,70 @@ router.post("/upload", upload.single("file"), async (req, res) => {
 
 });
 
+router.get("/students/:id/result", async (req, res) => {
+
+    let id = req.params.id;
+
+
+
+
+
+    let newStudent = StudentSchema;
+    newStudent.student_id = id;
+
+
+    var result = await StudentDb.getResultById(newStudent)
+    if (result.message) {
+        res.status(400).send({ status: false, message: " No data found/ Invalid Student id" + result.message });
+    }
+    else {
+        return res.status(200).send({
+            status: true, message: "Data fetched successfully",
+            data: result.rows[0]
+        })
+    }
+
+});
+
+router.get("/students/:resultStatus", async (req, res) => {
+
+    let resultStatus = req.params.resultStatus;
+    let newStudent = StudentSchema;
+    resultStatus = resultStatus.toUpperCase();
+    if (resultStatus == 'PASSED') {
+        var result = await StudentDb.getPassedResult()
+        if (result.message) {
+            res.status(400).send({ status: false, message: " No data found/ Invalid Student id" + result.message });
+        }
+        else {
+            return res.status(200).send({
+                status: true, message: "Passed Students List",
+                data: result.rows
+            })
+        }
+
+    }
+    else if (resultStatus == 'FAILED') {
+        var result = await StudentDb.getFailedResult()
+        if (result.message) {
+            res.status(400).send({ status: false, message: " No data found/ Invalid Student id" + result.message });
+        }
+        else {
+            return res.status(200).send({
+                status: true, message: "Failed Students List",
+                data: result.rows
+            })
+        }
+
+    }
+    else {
+        return res.status(400).send({
+            status: true, message: "Invalid Result status",
+        })
+
+    }
+
+
+
+});
 module.exports = router;
