@@ -6,6 +6,9 @@ exports.getResultById = async (newUser) => await pg.query('SELECT * FROM student
     .then(res => { if (res.rows.length <= 0) { throw new Error('No data') } return res; }).catch(err => { return err });
 
 
+exports.getAllStudents = async (newUser) => await pg.query('SELECT * FROM student')
+    .then(res => { if (res.rows.length <= 0) { throw new Error('No data') } return res; }).catch(err => { return err });
+
 exports.addStudent = async (newUser) => pg.query('INSERT INTO student (student_id, name, age, marks1, marks2, marks3)VALUES ($1, $2, $3, $4, $5, $6)'
     , [newUser.student_id, newUser.name, newUser.age, newUser.mark1, newUser.mark2, newUser.mark3])
     .then(res => { return res; }).catch(err => { return err });

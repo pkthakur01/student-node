@@ -148,4 +148,19 @@ router.get("/students/:resultStatus", async (req, res) => {
 
 });
 
+router.get("/students", async (req, res) => {
+
+    var result = await StudentDb.getAllStudents();
+    if (result.message) {
+        res.status(400).send({ status: false, message: " No data found/ Invalid Student id" + result.message });
+    }
+    else {
+        return res.status(200).send({
+            status: true, message: "Data fetched successfully",
+            data: result.rows
+        })
+    }
+
+});
+
 module.exports = router;
